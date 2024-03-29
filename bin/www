@@ -8,9 +8,10 @@ var app = require('../app');
 var debug = require('debug')('gitdemo:server');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://127.0.0.1:27017/demo-2')
+  .then(() => console.log('Connected!'));
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
